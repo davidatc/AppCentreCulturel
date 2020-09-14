@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}🔒portail d'authentification{% endblock %}
+
+{% block body %}
+
+          
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-7">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center">Bienvenue sur le portail d'authentification
+                du Centre Culturel</h2>
+              <p class="card-text text-center">Après votre authentification, vous pourrez accéder à tous les services qui proposent des contenus administratifs.
+                </p>
+                <hr class="my-3">
+                <p class="card-text alert alert-warning" role="alert">
+                     ⚠️ N'oubliez pas de vous déconnecter lorsque vous avez fini d'utiliser les services authentifiés.
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="card">
+            <div class="card-body">      
+                  <form class="" method="post">
+                <div class="form-group">
+                <label for="inputPassword">Email</label>
+                 <label class="sr-only" for="inputEmail">Email</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input type="email" value="{{ last_username }}" name="email" class="form-control" id="inputEmail"  required autofocus>
+      </div>
+    </div>
+                  
+
+
+                <div class="form-group">
+                  <label for="inputPassword">Password</label>
+                  <input type="password" name="password" class="form-control" id="inputPassword" required >
+                  <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"required>
+                </div>
+                <hr class="my-4">
+                <div class="row justify-content-between">
+                    <div class="col-5">
+                        <button type="submit" class="btn btn-outline-success">Connexion</button>
+                        
+                    </div>
+              
+                </div>
+                  <div>
+                    {% if error %}
+      <div class="alert alert-danger my-3">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+                   </div>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      
+    
+    
+    
+    
+    
+        
+        
+          
+        
+        
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+        
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+        
+        #}
+        
+        
+        
+    
+    
+    
+    </div>
+</div>
+{% endblock %}

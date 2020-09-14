@@ -1,0 +1,47 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+{% block page_title 'Bienvenue sur le tableau de bord' %}
+{% block page_content %}
+{% if is_granted('ROLE_ADMIN') %}
+
+<div class="alert alert-info" role="alert">
+    <i class="far fa-eye"></i> D'un coup d'oeil
+  </div>
+<div class="row m-3">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3><i class="fas fa-users"></i> Utilisateurs <a href="admin?crudAction=index&crudId=c2a6e28&menuIndex=1&submenuIndex=-1" class="btn btn-success btn-lg" role="button">{{totalUtilisateurs}}</a></h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h3> <i class="fas fa-desktop"></i> Ordinateurs <a href="admin?crudAction=index&crudId=691ddfc&menuIndex=3&submenuIndex=-1" class="btn btn-success btn-lg" role="button">{{totalOrdinateurs}}</a></h3>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row m-3">
+    <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h3 class= "text-center"><i class="fas fa-network-wired"></i> Ordinateurs Attribués <a href="admin?crudAction=index&crudId=df370ee&menuIndex=5&submenuIndex=-1" class="btn btn-success btn-lg" role="button">{{totalAttributions}}</a></h3> 
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  <footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class=" footer-copyright text-center py-3">© 2020 Copyright: David Atchiaman
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+{% endif %}
+
+{% endblock %}
