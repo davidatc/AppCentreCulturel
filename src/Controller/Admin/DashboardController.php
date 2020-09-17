@@ -83,8 +83,8 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::linkToCrud('Tous les postes', 'fa fa-list', Ordinateurs::class),
             yield MenuItem::section('Attributions postes', 'far fa-calendar-alt'),
             yield MenuItem::linkToCrud('Toutes les attributions', 'fa fa-list', Attributions::class),
-            // yield MenuItem::section('Horaires', 'fa fa-clock-o'),
-            // yield MenuItem::linkToCrud('Toutes les créneaux', 'fa fa-list', Horaires::class),
+            yield MenuItem::section('Horaires', 'fa fa-clock-o'),
+            yield MenuItem::linkToCrud('Toutes les créneaux', 'fa fa-list', Horaires::class),
             
         ];
     }
